@@ -1,0 +1,22 @@
+title #{title}
+
+//- Unbuffered JavaScript code does not output any results.
+//- Unbuffered code must start with `-` hyphen.
+- var fieldName = "username"
+- var required = false
+input(type="text", name=fieldName, required=required)
+
+//- Pug.js also support block Unbuffered code.
+// JavaScript comment inside the block
+-
+  var classes = [
+    "general",
+    "link",
+    "active"
+  ];
+a(href="some-link", class=classes)
+
+include pug-mixin/mixin
+
++link("mixin-ref", "mixin")
+img(src=require("./pug-mixin/logo-img/app-logo.png"))
