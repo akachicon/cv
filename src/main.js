@@ -1,4 +1,5 @@
 import Extension from './extension';
+import style from './styles/style.scss';
 
 class Syntax {
   constructor() {

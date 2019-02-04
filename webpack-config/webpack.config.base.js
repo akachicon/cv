@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,11 +5,17 @@ const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const project = require('../project.config.js');
+const { inProject, inProjectSrc } = require('../utils');
 
-const inProject = path.resolve.bind(path, project.basePath); // TODO: make utils
-const inProjectSrc = (...files) => inProject(project.srcDir, ...files);
-
+/* eslint-disable */
 const __DEV__ = project.env === 'development';
+const __PROD__ = project.env === 'production';
+
+const postCssPlugins = __PROD__ ? [
+  require('autoprefixer')({}),
+  require('cssnano')({})
+] : [];
+/* eslint-enable */
 
 module.exports = {
   context: inProjectSrc(''),
@@ -51,6 +56,40 @@ module.exports = {
         options: {
           limit: 8192
         }
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          __PROD__ ? MiniCssExtractPlugin.loader : {
+            loader: 'style-loader',
+            options: {
+              singleton: true,
+              hmr: __DEV__
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              localIdentName: `${project.main.production}--[hash:base64:10]`,
+              importLoaders: 2
+            }
+          },
+          'resolve-url-loader', // sourceMap option must be used in following loaders in order to get this loader to work
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: postCssPlugins,
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -98,7 +137,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist'], { root: project.basePath }),
     new HtmlWebpackPlugin({
       inlineSource: 'runtime',
-      filename: 'index.html',
+      filename: project.html.output.filename,
       template: inProjectSrc(project.html.template),
       templateParameters: project.html.templateParameters,
     }),

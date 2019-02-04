@@ -14,7 +14,7 @@ module.exports = {
   /** The name of the directory in which to emit compiled assets */
   outDir: 'dist',
   /** The base path for all projects assets (relative to the website root) */
-  publicPath: '/',
+  publicPath: '',
   /** Which tool to use to generate sourcemaps in development */
   sourceMaps: 'cheap-eval-source-map',
   /** A hash map of keys that the compiler should treat as external to the project */
@@ -23,6 +23,9 @@ module.exports = {
   globals: {},
   /** An html related data (basically supposed for WebpackHtmlPlugin) */
   html: {
+    output: {
+      filename: 'index.html'
+    },
     template: 'index.pug', // relative to srcDir
     templateParameters: {
       title: 'CV'

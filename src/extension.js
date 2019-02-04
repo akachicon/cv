@@ -1,4 +1,4 @@
-class Extenstion {
+class Extension {
   constructor(name) {
     this.extension = name;
   }

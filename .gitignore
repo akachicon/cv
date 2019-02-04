@@ -3,6 +3,12 @@ node_modules
 
 # Logs
 npm-debug.log
+bundle-report.html
+bundle-report-gh-pages.html
 
 # Local development
 .idea
+
+# Misc
+*.txt
+dist/*
