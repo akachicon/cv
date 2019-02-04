@@ -7,7 +7,6 @@
     "build:prod": "cross-env NODE_ENV=production webpack --config \"./webpack-config/webpack.config.prod.js\"",
     "build:dev": "cross-env NODE_ENV=development webpack-dev-server --config \"./webpack-config/webpack.config.dev.js\"",
     "build:gh-pages": "cross-env NODE_ENV=production webpack --config \"./webpack-config/webpack.config.gh-pages.js\"",
-    "make:gh-pages": "npm run build:gh-pages && node copy-gh-pages-html.js",
     "lint": "eslint --ext .js src/",
     "lint:fix": "eslint --fix --ext .js src/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +24,6 @@
     "babel-minify-webpack-plugin": "^0.3.1",
     "clean-webpack-plugin": "^0.1.19",
     "compression-webpack-plugin": "^2.0.0",
-    "copyfiles": "^2.1.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "cssnano": "^4.1.8",
