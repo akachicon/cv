@@ -1,3 +1,5 @@
+const path = require('path');
+
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
@@ -8,7 +10,7 @@ module.exports = {
   /** The name of the directory containing the application source code */
   srcDir: 'src',
   /** The file name of the application's entry point */
-  main: 'main',
+  main: path.join('blocks', 'root', 'root.js'),
   /** The file name of the application's bootstrap */
   bootstrap: 'bootstrap',
   /** The name of the directory in which to emit compiled assets */
@@ -26,7 +28,7 @@ module.exports = {
     output: {
       filename: 'index.html'
     },
-    template: 'index.pug', // relative to srcDir
+    template: path.join('blocks', 'root', 'root.pug'), // relative to srcDir
     templateParameters: {
       title: 'CV'
     }

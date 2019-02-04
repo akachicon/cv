@@ -139,10 +139,10 @@ module.exports = {
       inlineSource: 'runtime',
       filename: project.html.output.filename,
       template: inProjectSrc(project.html.template),
-      templateParameters: project.html.templateParameters,
+      templateParameters: project.html.templateParameters
     }),
     new WebappWebpackPlugin({
-      logo: inProjectSrc('app-logo.png'),
+      logo: inProjectSrc('blocks', 'root', 'favicon.png'),
       prefix: 'favicons/',
       cache: true,
       favicons: {

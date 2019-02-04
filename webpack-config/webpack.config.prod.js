@@ -22,9 +22,9 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
-    // new CompressionPlugin({
-    //   test: /(vendor~|shim~)/
-    // }),
+    new CompressionPlugin({
+      test: /(vendor~|shim~)/
+    }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       reportFilename: path.resolve(project.basePath, 'bundle-report.html')
