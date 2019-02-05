@@ -2,3 +2,21 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+@font-face {
+  font-family: "MyriadPro LightSemiExt";
+  src: url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.woff) format("woff"),
+    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.ttf) format("ttf"),
+    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.otf) format("otf"),
+    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.svg) format("svg");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyriadPro Bold";
+  src: url("fonts/myriad-pro-bold/myriad-pro-bold.woff") format("woff"),
+    url("fonts/myriad-pro-bold/myriad-pro-bold.ttf") format("ttf"),
+    url("./fonts/myriad-pro-bold/myriad-pro-bold.otf") format("otf"),
+    url("./fonts/myriad-pro-bold/myriad-pro-bold.svg") format("svg");
+  font-display: swap;
+}

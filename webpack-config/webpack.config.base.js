@@ -51,13 +51,6 @@ module.exports = {
         use: ['pug-loader']
       },
       {
-        test: /\.(woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 8192
-        }
-      },
-      {
         test: /\.(css|scss)$/,
         use: [
           __PROD__ ? MiniCssExtractPlugin.loader : {
@@ -92,7 +85,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(ttf|otf|woff|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192
+        }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'file-loader',
         options: {
           name: '[name][hash:8].[ext]',

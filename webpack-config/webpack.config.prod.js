@@ -23,7 +23,7 @@ module.exports = merge(baseConfig, {
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     new CompressionPlugin({
-      test: /(vendor~|shim~)/
+      test: /(vendor~|shim~|\.ttf|\.otf|\.woff|\.svg)/
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',

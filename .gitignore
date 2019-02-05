@@ -8,6 +8,12 @@ bundle-report.html
 # Local development
 .idea
 
+# Fonts
+*.ttf
+*.otf
+*.woff
+*.svg
+
 # Misc
 *.txt
 dist/*
