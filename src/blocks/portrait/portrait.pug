@@ -1,0 +1,19 @@
+include ../circle-image/circle-image
+
+mixin portrait(options = {})
+  -
+    var name = options.name || 'NAME HERE'
+    var surname = options.surname || 'SURNAME'
+    var career = options.career || 'GRAPHIC DESIGNER'
+    var photoUrl = options.photo || require('../root/favicon.png')
+
+  header.portrait
+    .portrait__photo
+      +circle-image(photoUrl)
+
+    h1.portrait__info
+      span.portrait__name #{name}
+      br
+      span.portrait__surname #{surname}
+      br
+      h2.portrait__profession #{career}

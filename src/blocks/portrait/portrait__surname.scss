@@ -1,0 +1,15 @@
+$fontSize: 4rem;
+
+.portrait__surname {
+  display: inline-block;
+  font-family: 'MyriadPro Bold', sans-serif;
+  font-size: $fontSize;
+  white-space: nowrap;
+  text-transform: uppercase;
+  line-height: $fontSize * .8;
+  margin: {
+    left: 50%;
+    bottom: .9rem;
+  }
+  transform: translate(-50%);
+}

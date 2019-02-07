@@ -1,0 +1,13 @@
+include ../section-header/section-header
+
+mixin contactEntry(title, data)
+  .contact__entry
+    h4.contact__entry-title #{title}
+    .contact__entry-data #{data}
+
+mixin contact(list = [])
+  section.contact
+    +section-header('contact')
+
+    each entry in list
+      +contactEntry(entry.title, entry.data)

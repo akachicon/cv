@@ -1,0 +1,124 @@
+include ../portrait/portrait
+include ../profile/profile
+include ../contact/contact
+include ../skills/skills
+include ../education/education
+include ../experience/experience
+
+mixin layout
+  main.layout
+    .layout__column-left
+      .layout__portrait
+        +portrait({
+          name: 'name here',
+          surname: 'surname',
+          career: 'graphic designer',
+          photo: require('../root/favicon.png')
+        })
+
+      .layout__section
+        +profile({
+          regularText: 'Lorem ipsum dolor sit amet, consectetuer '
+            + 'adipiscing elit. Aenean commodo ligula eget dolor. Aenean '
+            + 'massa. Cum sociis natoque penatibus et magnis dis parturient '
+            + 'montes, nascetur ridiculus mus. Donec quam felis, ultricies '
+            + 'nec, pellentesque eu, pretium quis, sem. Nulla consequat massa '
+            + 'quis enim. Donec pede justo, fringilla vel, aliquet nec, '
+            + 'vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, '
+            + 'venenatis vitae, justo. Nullam dictum felis eu ',
+          boldText: 'pede mollis pretium. Integer tincidunt. Cras dapibus. '
+            + 'Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. '
+            + 'Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, '
+            + 'enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, '
+            + 'tellus. Phasellus viverra nulla ut metus varius laoreet. '
+            + 'Quisque rutrum. '
+        })
+
+      .layout__section
+        +contact([
+          {
+            title: 'address',
+            data: 'Main Street, City.'
+          },
+          {
+            title: 'e-mail',
+            data: 'contact@domain.com'
+          },
+          {
+            title: 'phone',
+            data: '555-555-555'
+          },
+          {
+            title: 'website',
+            data: 'www.yourweb.com'
+          }
+        ])
+
+      .layout__section
+        +skills([
+          {
+            title: 'creative',
+            points: 9
+          },
+          {
+            title: 'teamwork',
+            points: 11
+          },
+          {
+            title: 'innovate',
+            points: 6
+          },
+          {
+            title: 'communication',
+            points: 11
+          }
+        ])
+
+    .layout__column-right
+      .layout__section
+        -
+          var educationEntry = {
+            header: {
+              title: 'master degree',
+              subtitle: 'university name',
+              period: {
+                start: '2011-02',
+                end: '2014-06'
+              }
+            },
+            details: 'Lorem ipsum dolor sit amet, consectetuer adipiscing'
+              + ' elit. Aenean commodo ligula eget dolor. Aenean massa. Cum'
+              + ' sociis natoque penatibus et magnis dis parturient montes,'
+              + ' nascetur ridiculus mus. Donec quam felis, ultricies nec,'
+              + ' pellentesque.'
+          }
+
+        +education([
+          educationEntry,
+          educationEntry,
+          educationEntry,
+          educationEntry
+        ])
+
+        -
+          var experienceEntry = {
+            header: {
+              title: 'company name',
+              subtitle: 'your job here',
+              period: {
+                start: '2011-02',
+                end: '2014-06'
+              }
+            },
+            details: 'Lorem ipsum dolor sit amet, consectetuer adipiscing'
+              + ' elit. Aenean commodo ligula eget dolor. Aenean massa. Cum'
+              + ' sociis natoque penatibus et magnis dis parturient montes,'
+              + ' nascetur ridiculus mus. Donec quam felis, ultricies nec,'
+              + ' pellentesque.'
+          }
+
+        +experience([
+          educationEntry,
+          educationEntry,
+          educationEntry
+        ])

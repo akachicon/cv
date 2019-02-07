@@ -1,0 +1,21 @@
+include ../section-header/section-header
+
+mixin skillsEntry(title, points)
+  .skills__entry
+    .skills__entry-title #{title}
+    .skills__entry-rate
+      - var i = 1
+        while i <= 12
+          if i <= points
+            .skills__point.skills__point_filled
+          else
+            .skills__point
+          - i++
+
+mixin skills(list = [])
+  section.skills
+    +section-header('skills')
+
+    .skills__list
+      each entry in list
+        +skillsEntry(entry.title, entry.points)

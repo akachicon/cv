@@ -1,0 +1,13 @@
+.portrait__profession {
+  display: inline-block;
+  font-family: 'MyriadPro Bold', sans-serif;
+  font-size: 1.55rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin: {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+  }
+  transform: translate(-50%);
+}

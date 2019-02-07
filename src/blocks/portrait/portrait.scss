@@ -1,0 +1,10 @@
+.portrait {
+  overflow: visible;
+}
+
+@import 'portrait__info';
+@import 'portrait__name';
+@import 'portrait__photo';
+@import 'portrait__profession';
+@import 'portrait__surname';
+@import '../circle-image/circle-image';

@@ -1,0 +1,12 @@
+$fontSize: 3.43rem;
+
+.portrait__name {
+  display: inline-block;
+  font-family: "MyriadPro LightSemiExt", sans-serif;
+  font-size: $fontSize;
+  white-space: nowrap;
+  text-transform: uppercase;
+  line-height: $fontSize * .8;
+  margin-left: 50%;
+  transform: translate(-50%);
+}

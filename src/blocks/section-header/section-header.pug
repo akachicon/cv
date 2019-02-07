@@ -1,0 +1,8 @@
+include ../circle-image/circle-image
+
+mixin section-header(title)
+  .section-header
+    .section-header__icon
+      +circle-image(require('../root/favicon.png'))
+    h3.section-header__title #{title}
+    .section-header__line

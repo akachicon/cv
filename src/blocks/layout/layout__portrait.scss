@@ -1,0 +1,15 @@
+.layout__portrait {
+  width: 68%;
+  max-width: 30rem;
+  margin: {
+    left: 52%;
+    bottom: 4.7rem;
+  }
+  transform: translate(-50%);
+}
+
+@media screen and (max-width: 960px) {
+  .layout__portrait {
+    margin-left: 50%;
+  }
+}

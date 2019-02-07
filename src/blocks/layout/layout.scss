@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin: {
+    top: 6.1%;
+    right: 3.55%;
+  }
+}
+
+@import 'layout__column-left';
+@import 'layout__column-right';
+@import 'layout__portrait';
+@import 'layout__section';
+@import '../portrait/portrait';
+@import '../profile/profile';
+@import '../contact/contact';
+@import '../skills/skills';
+@import '../education/education';
+@import '../experience/experience';

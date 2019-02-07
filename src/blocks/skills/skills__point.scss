@@ -1,0 +1,12 @@
+$radius: 1.2rem;
+
+.skills__point {
+  width: $radius;
+  height: $radius;
+  margin: {
+    left: .29rem;
+    right: .29rem;
+  }
+  border-radius: 50%;
+  background: #e6e6e6;
+}

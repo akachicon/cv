@@ -1,0 +1,9 @@
+include ../section-header/section-header
+include ../list/list
+
+mixin education(educationList)
+  section.education
+    +section-header('education')
+
+    .education__list
+      +list(educationList)

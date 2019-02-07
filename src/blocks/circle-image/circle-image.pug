@@ -1,0 +1,8 @@
+mixin circle-image(imgUrl)
+  .circle
+    if (imgUrl)
+      - var style = 'background-image: url(' + imgUrl + ')'
+
+      .circle__img(style=style)
+    else
+      .circle__img

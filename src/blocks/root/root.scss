@@ -4,19 +4,34 @@ html, body {
 }
 
 @font-face {
-  font-family: "MyriadPro LightSemiExt";
-  src: url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.woff) format("woff"),
-    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.ttf) format("ttf"),
-    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.otf) format("otf"),
-    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.svg) format("svg");
+  font-family: 'MyriadPro Regular';
+  src: url(fonts/myriad-pro-regular/myriad-pro-regular.woff) format('woff'),
+  url(./fonts/myriad-pro-regular/myriad-pro-regular.ttf) format('ttf'),
+  url(./fonts/myriad-pro-regular/myriad-pro-regular.otf) format('otf'),
+  url(./fonts/myriad-pro-regular/myriad-pro-regular.svg) format('svg');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "MyriadPro Bold";
-  src: url("fonts/myriad-pro-bold/myriad-pro-bold.woff") format("woff"),
-    url("fonts/myriad-pro-bold/myriad-pro-bold.ttf") format("ttf"),
-    url("./fonts/myriad-pro-bold/myriad-pro-bold.otf") format("otf"),
-    url("./fonts/myriad-pro-bold/myriad-pro-bold.svg") format("svg");
+  font-family: 'MyriadPro Bold';
+  src: url(fonts/myriad-pro-bold/myriad-pro-bold.woff) format('woff'),
+  url(./fonts/myriad-pro-bold/myriad-pro-bold.ttf) format('ttf'),
+  url(./fonts/myriad-pro-bold/myriad-pro-bold.otf) format('otf'),
+  url(./fonts/myriad-pro-bold/myriad-pro-bold.svg) format('svg');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'MyriadPro LightSemiExt';
+  src: url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.woff) format('woff'),
+    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.ttf) format('ttf'),
+    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.otf) format('otf'),
+    url(./fonts/myriad-pro-light-semi-extended/myriad-pro-light-semi-extended.svg) format('svg');
+  font-display: swap;
+}
+
+@media screen and (max-width: 1024px) {
+  font-size: 14px;
+}
+
+@import '../layout/layout';

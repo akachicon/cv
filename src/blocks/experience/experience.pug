@@ -1,0 +1,9 @@
+include ../section-header/section-header
+include ../list/list
+
+mixin experience(experienceList)
+  section.experience
+    +section-header('experience')
+
+    .experience__list
+      +list(experienceList)
