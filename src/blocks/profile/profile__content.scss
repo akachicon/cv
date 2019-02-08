@@ -3,3 +3,9 @@
   font-size: 0.995rem;
   margin-top: .9rem;
 }
+
+@media screen and (max-width: 576px) {
+  .profile__content {
+    font-size: 1.5rem;
+  }
+}

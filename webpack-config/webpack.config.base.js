@@ -30,7 +30,7 @@ module.exports = {
     publicPath: project.publicPath
   },
   resolve: {
-    extensions: ['*', '.js', '.json', '.css', '.scss'] // TODO: add fonts
+    extensions: ['*', '.js', '.json', '.css', '.scss']
   },
   module: {
     rules: [

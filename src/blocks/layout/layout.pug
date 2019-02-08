@@ -4,6 +4,7 @@ include ../contact/contact
 include ../skills/skills
 include ../education/education
 include ../experience/experience
+include ../software/software
 
 mixin layout
   main.layout
@@ -13,10 +14,10 @@ mixin layout
           name: 'name here',
           surname: 'surname',
           career: 'graphic designer',
-          photo: require('../root/favicon.png')
+          photoUrl: getAssetUrl('/root/favicon.png')
         })
 
-      .layout__section
+      .layout__section-left
         +profile({
           regularText: 'Lorem ipsum dolor sit amet, consectetuer '
             + 'adipiscing elit. Aenean commodo ligula eget dolor. Aenean '
@@ -34,7 +35,7 @@ mixin layout
             + 'Quisque rutrum. '
         })
 
-      .layout__section
+      .layout__section-left
         +contact([
           {
             title: 'address',
@@ -54,7 +55,7 @@ mixin layout
           }
         ])
 
-      .layout__section
+      .layout__section-left
         +skills([
           {
             title: 'creative',
@@ -75,7 +76,7 @@ mixin layout
         ])
 
     .layout__column-right
-      .layout__section
+      .layout__section-right
         -
           var educationEntry = {
             header: {
@@ -100,6 +101,7 @@ mixin layout
           educationEntry
         ])
 
+      .layout__section-right
         -
           var experienceEntry = {
             header: {
@@ -118,7 +120,35 @@ mixin layout
           }
 
         +experience([
-          educationEntry,
-          educationEntry,
-          educationEntry
+          experienceEntry,
+          experienceEntry,
+          experienceEntry
+        ])
+
+      .layout__section-right
+        +software([
+          {
+            title: 'photoshop',
+            pct: 91
+          },
+          {
+            title: 'dreamweaver',
+            pct: 83
+          },
+          {
+            title: 'illustrator',
+            pct: 70
+          },
+          {
+            title: 'after effects',
+            pct: 61
+          },
+          {
+            title: 'indesign',
+            pct: 56
+          },
+          {
+            title: 'html&css3',
+            pct: 91
+          }
         ])

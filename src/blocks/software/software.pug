@@ -1,0 +1,17 @@
+include ../section-header/section-header
+
+mixin software(list)
+  mixin softwareEntry(title, pct)
+    .software__entry
+      .software__entry-title #{title}
+      .software__entry-rate
+        .software__entry-rate-filler(
+          style='width: ' + pct + '%'
+        )
+
+  section.software
+    +section-header('software', getAssetUrl('/software/software-icon.png'), 0.7)
+
+    .software__list
+      each entry in list
+        +softwareEntry(entry.title, entry.pct)

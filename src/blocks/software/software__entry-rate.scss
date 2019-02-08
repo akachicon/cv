@@ -1,0 +1,13 @@
+.software__entry-rate {
+  height: 1.45rem;
+  margin-top: .9rem;
+  background: #e6e6e6;
+}
+
+@media screen and (max-width: 576px) {
+  .software__entry-rate {
+    height: 1.45rem;
+    margin-top: .5rem;
+    background: #e6e6e6;
+  }
+}

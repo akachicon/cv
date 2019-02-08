@@ -1,7 +1,11 @@
 include ../section-header/section-header
 
-mixin profile(data = {})
+mixin profile(data)
+  -
+    var regularText = data.regularText
+    var boldText = data.boldText
+
   section.profile
-    +section-header('profile')
-    p.profile__content #{data.regularText || ''}
-      span.profile__content.profile__content_bold #{data.boldText || ''}
+    +section-header('profile', getAssetUrl('/profile/profile-icon.png'), 0.52)
+    p.profile__content #{regularText}
+      span.profile__content.profile__content_bold #{boldText}

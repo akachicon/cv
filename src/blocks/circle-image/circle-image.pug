@@ -1,7 +1,12 @@
-mixin circle-image(imgUrl)
+mixin circle-image(imgUrl, imgScale)
   .circle
     if (imgUrl)
-      - var style = 'background-image: url(' + imgUrl + ')'
+      -
+        var style = 'background-image: url(' + imgUrl + ');'
+
+        if (imgScale) {
+          style += 'background-size: ' + imgScale * 100 + '%;'
+        }
 
       .circle__img(style=style)
     else

@@ -1,13 +1,14 @@
 include ../section-header/section-header
 
-mixin contactEntry(title, data)
-  .contact__entry
-    h4.contact__entry-title #{title}
-    .contact__entry-data #{data}
+mixin contact(list)
+  mixin contactEntry(title, data)
+    .contact__entry
+      h4.contact__entry-title #{title}
+      .contact__entry-data #{data}
 
-mixin contact(list = [])
   section.contact
-    +section-header('contact')
+    +section-header('contact', getAssetUrl('/contact/contact-icon.png'), 0.6)
 
-    each entry in list
-      +contactEntry(entry.title, entry.data)
+    .contact__list
+      each entry in list
+        +contactEntry(entry.title, entry.data)

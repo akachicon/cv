@@ -2,3 +2,10 @@
   font-family: 'MyriadPro Regular', sans-serif;
   font-size: 1.004rem;
 }
+
+@media screen and (max-width: 576px) {
+  .list__entry-details {
+    font-family: 'MyriadPro Regular', sans-serif;
+    font-size: 1.5rem;
+  }
+}

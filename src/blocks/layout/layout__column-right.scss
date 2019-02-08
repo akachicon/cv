@@ -6,3 +6,12 @@
     right: 1.2%;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .layout__column-right {
+    padding: {
+      left: 0;
+      right: 0;
+    }
+  }
+}

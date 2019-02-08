@@ -1,41 +1,41 @@
--
-  var formatDate = function (dateString) {
-    var date = new Date(dateString)
-    var monthNames = [
-      "January", "February", "March",
-      "April", "May", "June", "July",
-      "August", "September", "October",
-      "November", "December"
-    ]
-    var monthIdx = date.getMonth()
-    var year = date.getYear() + 1900
+mixin list(entries)
+  mixin listEntry(content)
+    -
+      var header = content.header
+      var title = header.title
+      var subtitle = header.subtitle
+      var period = {
+        start: header.period.start,
+        end: header.period.end
+      }
+      var details = content.details
 
-    return monthNames[monthIdx].slice(0, 3) + ' ' + year
-  }
+      function formatDate(dateString) {
+        var date = new Date(dateString)
+        var monthNames = [
+          'January', 'February', 'March',
+          'April', 'May', 'June', 'July',
+          'August', 'September', 'October',
+          'November', 'December'
+        ]
+        var monthIdx = date.getMonth()
+        var year = date.getYear() + 1900
 
-mixin listEntry(content)
-  -
-    var header = content.header
-    var title = header.title
-    var subtitle = header.subtitle
-    var period = {
-      start: header.period.start,
-      end: header.period.end
-    }
-    var details = content.details
+        return monthNames[monthIdx].slice(0, 3) + ' ' + year
+      }
 
-  .list__entry
-    h4.list__entry-header
-      span.list__entry-header-title #{title}
-        -
-          var start = formatDate(period.start)
-          var end = formatDate(period.end)
-      != '&nbsp;&nbsp;&nbsp;&nbsp;'
-      span.list__entry-header-period // #{start} - #{end}
-      span.list__entry-header-subtitle #{subtitle}
-    .list__entry-details #{details}
+    .list__entry
+      h4.list__entry-header
+        span.list__entry-header-title #{title}
+          -
+            var start = formatDate(period.start)
+            var end = formatDate(period.end)
 
-mixin list(entries = [])
+        != '&nbsp;&nbsp;&nbsp;&nbsp;'
+        span.list__entry-header-period // #{start} - #{end}
+        span.list__entry-header-subtitle #{subtitle}
+      .list__entry-details #{details}
+
   .list
     each entry in entries
       +listEntry(entry)

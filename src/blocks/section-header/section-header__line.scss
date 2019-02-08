@@ -5,3 +5,9 @@
   margin-left: .6rem;
   background: #3d6cb0;
 }
+
+@media screen and (max-width: 576px) {
+  .section-header__line {
+    display: none;
+  }
+}

@@ -1,5 +1,20 @@
 include ../layout/layout
 
+-
+  var assets = {
+    '/root/favicon.png': require('./favicon.png'),
+    '/profile/profile-icon.png': require('../profile/profile-icon.png'),
+    '/contact/contact-icon.png': require('../contact/contact-icon.png'),
+    '/skills/skills-icon.png': require('../skills/skills-icon.png'),
+    '/education/education-icon.png': require('../education/education-icon.png'),
+    '/experience/experience-icon.png': require('../experience/experience-icon.png'),
+    '/software/software-icon.png': require('../software/software-icon.png')
+  }
+
+  function getAssetUrl(absolutePathUsingBlocksAsRoot) {
+    return assets[absolutePathUsingBlocksAsRoot]
+  }
+
 doctype html
 html(lang="")
   head

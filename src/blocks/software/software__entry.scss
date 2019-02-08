@@ -1,0 +1,19 @@
+.software__entry {
+  flex-basis: 43.65%;
+
+  margin: {
+    left: .6rem;
+    bottom: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .software__entry {
+    flex-basis: 100%;
+
+    margin: {
+      left: 1rem;
+      right: 1rem;
+    }
+  }
+}

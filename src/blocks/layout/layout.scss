@@ -1,19 +1,31 @@
 .layout {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
   margin: {
     top: 6.1%;
     right: 3.55%;
+  };
+}
+
+@media screen and (max-width: 992px) {
+  .layout {
+    margin: {
+      right: .8rem;
+      left: .8rem;
+    }
   }
 }
 
 @import 'layout__column-left';
 @import 'layout__column-right';
 @import 'layout__portrait';
-@import 'layout__section';
+@import 'layout__section-left';
+@import 'layout__section-right';
 @import '../portrait/portrait';
 @import '../profile/profile';
 @import '../contact/contact';
 @import '../skills/skills';
 @import '../education/education';
 @import '../experience/experience';
+@import '../software/software';
