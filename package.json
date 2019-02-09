@@ -4,9 +4,12 @@
   "description": "",
   "browserslist": "Chrome > 5, Firefox > 5, Edge > 5",
   "scripts": {
-    "build:prod": "cross-env NODE_ENV=production webpack --config \"./webpack-config/webpack.config.prod.js\"",
-    "build:dev": "cross-env NODE_ENV=development webpack-dev-server --config \"./webpack-config/webpack.config.dev.js\"",
-    "build:gh-pages": "cross-env NODE_ENV=production webpack --config \"./webpack-config/webpack.config.gh-pages.js\"",
+    "webpack:dev": "webpack-dev-server --config \"./webpack-config/webpack.config.dev.js\"",
+    "webpack:prod": "webpack --config \"./webpack-config/webpack.config.prod.js\"",
+    "webpack:gh-pages": "webpack --config \"./webpack-config/webpack.config.gh-pages.js\"",
+    "build:dev": "cross-env NODE_ENV=development npm run webpack:dev",
+    "build:prod": "cross-env NODE_ENV=production npm run webpack:prod",
+    "build:gh-pages": "cross-env WP_BUILD=gh-pages npm run build:prod",
     "lint": "eslint --ext .js src/",
     "lint:fix": "eslint --fix --ext .js src/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -44,7 +47,6 @@
     "resolve-url-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
     "webapp-webpack-plugin": "^2.3.1",
     "webpack": "^4.21.0",
     "webpack-bundle-analyzer": "^3.0.3",

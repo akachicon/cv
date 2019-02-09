@@ -85,10 +85,16 @@ module.exports = {
         ]
       },
       {
-        test: /\.(ttf|otf|woff|svg)$/,
-        loader: 'url-loader',
+        test: /[\\/]fonts[\\/].+\.(ttf|otf|woff|svg)$/,
+        loader: 'file-loader',
         options: {
-          limit: 8192
+          publicPath: (url) => {
+            if (process.env.WP_BUILD === 'gh-pages') {
+              return `/${url}`;
+            }
+
+            return url;
+          }
         }
       },
       {
