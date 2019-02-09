@@ -9,10 +9,10 @@ bundle-report.html
 .idea
 
 # Fonts
-*.ttf
-*.otf
-*.woff
-*.svg
+*/src/*.ttf
+*/src/*.otf
+*/src/*.woff
+*/src/*.svg
 
 # Misc
 *.txt
