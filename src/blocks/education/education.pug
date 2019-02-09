@@ -3,7 +3,11 @@ include ../list/list
 
 mixin education(educationList)
   section.education
-    +section-header('education', getAssetUrl('/education/education-icon.png'), 0.7)
+    +section-header(
+      'education',
+      getAssetUrl('/education/education-icon.png'),
+      0.7
+    )
 
     .education__list
-      +list(educationList)
+      +list(educationList, '3d6cb0')

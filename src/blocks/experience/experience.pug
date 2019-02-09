@@ -3,7 +3,11 @@ include ../list/list
 
 mixin experience(experienceList)
   section.experience
-    +section-header('experience', getAssetUrl('/experience/experience-icon.png'), 0.6)
+    +section-header(
+      'experience',
+      getAssetUrl('/experience/experience-icon.png'),
+      0.6
+    )
 
     .experience__list
       +list(experienceList)

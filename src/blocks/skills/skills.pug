@@ -15,7 +15,11 @@ mixin skills(list)
           - i++
 
   section.skills
-    +section-header('skills', getAssetUrl('/skills/skills-icon.png'), 0.47)
+    +section-header(
+      'skills',
+      getAssetUrl('/skills/skills-icon.png'),
+      0.47
+    )
 
     .skills__list
       each entry in list

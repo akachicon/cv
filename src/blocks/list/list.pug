@@ -1,4 +1,4 @@
-mixin list(entries)
+mixin list(entries, titleColor)
   mixin listEntry(content)
     -
       var header = content.header
@@ -26,10 +26,18 @@ mixin list(entries)
 
     .list__entry
       h4.list__entry-header
-        span.list__entry-header-title #{title}
+        if titleColor
           -
-            var start = formatDate(period.start)
-            var end = formatDate(period.end)
+            var entity = 'list__entry-header-title'
+            var modifier = '_color_3d6cb0'
+
+          span(class= entity + ' ' + entity + modifier) #{title}
+        else
+          span.list__entry-header-title #{title}
+
+        -
+          var start = formatDate(period.start)
+          var end = formatDate(period.end)
 
         != '&nbsp;&nbsp;&nbsp;&nbsp;'
         span.list__entry-header-period // #{start} - #{end}

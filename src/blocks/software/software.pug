@@ -10,7 +10,11 @@ mixin software(list)
         )
 
   section.software
-    +section-header('software', getAssetUrl('/software/software-icon.png'), 0.7)
+    +section-header(
+      'software',
+      getAssetUrl('/software/software-icon.png'),
+      0.7
+    )
 
     .software__list
       each entry in list
